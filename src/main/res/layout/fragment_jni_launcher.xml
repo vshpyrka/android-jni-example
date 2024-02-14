@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.example.nativelib.JniLauncherActivity">
+
+    <Button
+        android:id="@+id/png"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Process PNG"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/jpeg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Process JPEG"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/blur"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Blur"
+        tools:ignore="HardcodedText" />
+
+</LinearLayout>

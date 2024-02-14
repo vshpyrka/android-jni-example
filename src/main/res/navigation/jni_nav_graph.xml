@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/jni_nav_graph"
+    app:startDestination="@id/jniLauncherFragment">
+
+    <fragment
+        android:id="@+id/jniLauncherFragment"
+        android:name="com.example.nativelib.JniLauncherFragment"
+        tools:layout="@layout/fragment_jni_launcher">
+        <action
+            android:id="@+id/to_LibPngProcessFragment"
+            app:destination="@id/PNGProcessFragment" />
+        <action
+            android:id="@+id/to_libJpegProcessFragment"
+            app:destination="@id/libJpegProcessFragment" />
+        <action
+            android:id="@+id/to_imageMagicProcessFragment"
+            app:destination="@id/imageMagicProcessFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PNGProcessFragment"
+        android:name="com.example.nativelib.LibPngProcessFragment"
+        tools:layout="@layout/fragment_image_process" />
+
+    <fragment
+        android:id="@+id/libJpegProcessFragment"
+        android:name="com.example.nativelib.LibJpegProcessFragment"
+        tools:layout="@layout/fragment_image_process" />
+
+    <fragment
+        android:id="@+id/imageMagicProcessFragment"
+        android:name="com.example.nativelib.ImageMagicProcessFragment"
+        tools:layout="@layout/fragment_image_process" />
+</navigation>
