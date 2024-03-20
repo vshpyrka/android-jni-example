@@ -14,7 +14,7 @@ NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
 # {"gcc" or "clang"-- "gcc" must be used with NDK r14b and earlier,
 #  and "clang" must be used with NDK r17c and later}
 TOOLCHAIN="clang"
-ANDROID_VERSION="21"
+ANDROID_VERSION="23"
 
 TARGET_DIR=src/main/cpp/libjpeg
 rm -fr ${TARGET_DIR}
@@ -31,7 +31,7 @@ cd .tmp/libjpeg-turbo-${LIBJPEG_VERSION}
   -DANDROID_ARM_MODE=arm \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_ASM_FLAGS="--target=arm-linux-androideabi${ANDROID_VERSION}" \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
@@ -51,7 +51,7 @@ rm -fr CMakeCache.txt
   -DANDROID_ARM_MODE=arm \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_ASM_FLAGS="--target=aarch64-linux-android${ANDROID_VERSION}" \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
@@ -70,7 +70,7 @@ rm -fr CMakeCache.txt
   -DCMAKE_ANDROID_ARCH_ABI=x86 \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
 #  -DCOMPILE_FLAGS=-mfloat-abi=hard
@@ -89,7 +89,7 @@ rm -fr CMakeCache.txt
   -DCMAKE_ANDROID_ARCH_ABI=x86_64 \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
 

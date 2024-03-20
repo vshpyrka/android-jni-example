@@ -36,7 +36,7 @@ do
 
   make clean
   echo $architecture
-  ./Configure $architecture -D__ANDROID_API__=21
+  ./Configure $architecture -D__ANDROID_API__=23
   make
 
   cp libcrypto.a ../../${TARGET_DIR}/${TARGET}

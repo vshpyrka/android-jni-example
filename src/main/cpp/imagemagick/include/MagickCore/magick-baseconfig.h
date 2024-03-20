@@ -35,7 +35,7 @@
 
 /* Directory where architecture-dependent configuration files live. */
 #ifndef MAGICKCORE_CONFIGURE_PATH
-#define MAGICKCORE_CONFIGURE_PATH "/Users/vshpyrka/Dev/android-playground/nativelib/.tmp/ImageMagick-7.1.1-11/build/etc/ImageMagick-7/"
+#define MAGICKCORE_CONFIGURE_PATH "/Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/etc/ImageMagick-7/"
 #endif
 
 /* Subdirectory of lib where architecture-dependent configuration files live.
@@ -52,7 +52,7 @@
 
 /* Directory where ImageMagick documents live. */
 #ifndef MAGICKCORE_DOCUMENTATION_PATH
-#define MAGICKCORE_DOCUMENTATION_PATH "/Users/vshpyrka/Dev/android-playground/nativelib/.tmp/ImageMagick-7.1.1-11/build/share/doc/ImageMagick-7/"
+#define MAGICKCORE_DOCUMENTATION_PATH "/Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/share/doc/ImageMagick-7/"
 #endif
 
 /* Define to 1 to enable distributed pixel cache support. */
@@ -68,7 +68,7 @@
 
 /* Directory where executables are installed. */
 #ifndef MAGICKCORE_EXECUTABLE_PATH
-#define MAGICKCORE_EXECUTABLE_PATH "/Users/vshpyrka/Dev/android-playground/nativelib/.tmp/ImageMagick-7.1.1-11/build/bin/"
+#define MAGICKCORE_EXECUTABLE_PATH "/Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/bin/"
 #endif
 
 /* Define if you have FFTW library */
@@ -139,13 +139,19 @@
 #endif
 
 /* Define to 1 if you have the `cabs' function. */
-/* #undef HAVE_CABS */
+#ifndef MAGICKCORE_HAVE_CABS
+#define MAGICKCORE_HAVE_CABS 1
+#endif
 
 /* Define to 1 if you have the `carg' function. */
-/* #undef HAVE_CARG */
+#ifndef MAGICKCORE_HAVE_CARG
+#define MAGICKCORE_HAVE_CARG 1
+#endif
 
 /* Define to 1 if you have the `cimag' function. */
-/* #undef HAVE_CIMAG */
+#ifndef MAGICKCORE_HAVE_CIMAG
+#define MAGICKCORE_HAVE_CIMAG 1
+#endif
 
 /* Define to 1 if you have the `clock' function. */
 #ifndef MAGICKCORE_HAVE_CLOCK
@@ -176,7 +182,9 @@
 #endif
 
 /* Define to 1 if you have the `creal' function. */
-/* #undef HAVE_CREAL */
+#ifndef MAGICKCORE_HAVE_CREAL
+#define MAGICKCORE_HAVE_CREAL 1
+#endif
 
 /* Define to 1 if you have the `ctime_r' function. */
 #ifndef MAGICKCORE_HAVE_CTIME_R
@@ -544,7 +552,9 @@
 #endif
 
 /* Define to 1 if you have the `posix_madvise' function. */
-/* #undef HAVE_POSIX_MADVISE */
+#ifndef MAGICKCORE_HAVE_POSIX_MADVISE
+#define MAGICKCORE_HAVE_POSIX_MADVISE 1
+#endif
 
 /* Define to 1 if you have the `posix_memalign' function. */
 #ifndef MAGICKCORE_HAVE_POSIX_MEMALIGN
@@ -611,7 +621,9 @@
 #endif
 
 /* Define to 1 if you have the `seekdir' function. */
-/* #undef HAVE_SEEKDIR */
+#ifndef MAGICKCORE_HAVE_SEEKDIR
+#define MAGICKCORE_HAVE_SEEKDIR 1
+#endif
 
 /* Define to 1 if you have the `select' function. */
 #ifndef MAGICKCORE_HAVE_SELECT
@@ -901,7 +913,9 @@
 /* #undef HAVE_TCMALLOC */
 
 /* Define to 1 if you have the `telldir' function. */
-/* #undef HAVE_TELLDIR */
+#ifndef MAGICKCORE_HAVE_TELLDIR
+#define MAGICKCORE_HAVE_TELLDIR 1
+#endif
 
 /* Define to 1 if you have the `tempnam' function. */
 #ifndef MAGICKCORE_HAVE_TEMPNAM
@@ -1076,12 +1090,12 @@
 
 /* Directory where ImageMagick architecture headers live. */
 #ifndef MAGICKCORE_INCLUDEARCH_PATH
-#define MAGICKCORE_INCLUDEARCH_PATH "/Users/vshpyrka/Dev/android-playground/nativelib/.tmp/ImageMagick-7.1.1-11/build/include/ImageMagick-7/"
+#define MAGICKCORE_INCLUDEARCH_PATH "/Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/include/ImageMagick-7/"
 #endif
 
 /* Directory where ImageMagick headers live. */
 #ifndef MAGICKCORE_INCLUDE_PATH
-#define MAGICKCORE_INCLUDE_PATH "/Users/vshpyrka/Dev/android-playground/nativelib/.tmp/ImageMagick-7.1.1-11/build/include/ImageMagick-7/"
+#define MAGICKCORE_INCLUDE_PATH "/Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/include/ImageMagick-7/"
 #endif
 
 /* ImageMagick is formally installed under prefix */
@@ -1108,7 +1122,7 @@
 
 /* Directory where architecture-dependent files live. */
 #ifndef MAGICKCORE_LIBRARY_PATH
-#define MAGICKCORE_LIBRARY_PATH "/Users/vshpyrka/Dev/android-playground/nativelib/.tmp/ImageMagick-7.1.1-11/build/lib/x86_64/ImageMagick-7.1.1/"
+#define MAGICKCORE_LIBRARY_PATH "/Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/lib/x86_64/ImageMagick-7.1.1/"
 #endif
 
 /* Subdirectory of lib where ImageMagick architecture dependent files are
@@ -1271,7 +1285,7 @@
 
 /* Directory where architecture-independent configuration files live. */
 #ifndef MAGICKCORE_SHARE_PATH
-#define MAGICKCORE_SHARE_PATH "/Users/vshpyrka/Dev/android-playground/nativelib/.tmp/ImageMagick-7.1.1-11/build/share/ImageMagick-7/"
+#define MAGICKCORE_SHARE_PATH "/Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/share/ImageMagick-7/"
 #endif
 
 /* Subdirectory of lib where architecture-independent configuration files
@@ -1331,7 +1345,9 @@
 #endif
 
 /* Define to 1 if strerror_r returns char *. */
-/* #undef STRERROR_R_CHAR_P */
+#ifndef MAGICKCORE_STRERROR_R_CHAR_P
+#define MAGICKCORE_STRERROR_R_CHAR_P 1
+#endif
 
 /* Define if you have POSIX threads libraries and header files. */
 /* #undef THREAD_SUPPORT */

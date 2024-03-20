@@ -14,7 +14,7 @@ NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
 # {"gcc" or "clang"-- "gcc" must be used with NDK r14b and earlier,
 #  and "clang" must be used with NDK r17c and later}
 TOOLCHAIN="clang"
-ANDROID_VERSION="21"
+ANDROID_VERSION="23"
 
 TARGET_DIR=src/main/cpp/libpng
 rm -fr ${TARGET_DIR}
