@@ -18,7 +18,7 @@ cd .tmp/ImageMagick-${IMAGEMAGICK_VERSION}
 export ANDROID_NDK=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
 export PATH=$ANDROID_NDK/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH
 export TOOLCHAIN=$ANDROID_NDK/toolchains/llvm/prebuilt/darwin-x86_64
-export API=21
+export API=23
 
 CURRENT_DIR=$(pwd)
 echo "$CURRENT_DIR"

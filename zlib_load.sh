@@ -3,12 +3,14 @@
 echo removing existing zlib source
 rm -rf ./.tmp
 mkdir .tmp
-rm -fr src/main/cpp/zlib
 
 ZLIB_VERSION=1.2.13
 
-echo downloading zlib release ${ZLIB_VERSION}
-curl https://www.zlib.net/zlib-${ZLIB_VERSION}.tar.gz -o ./.tmp/zlib.tar.gz
+#echo downloading zlib release ${ZLIB_VERSION}
+#curl https://www.zlib.net/zlib-${ZLIB_VERSION}.tar.gz -o ./.tmp/zlib.tar.gz
+
+cp archives/zlib-${ZLIB_VERSION}.tar.gz ./.tmp/zlib.tar.gz
+
 tar -xf .tmp/zlib.tar.gz -C ./.tmp
 
 TARGET_DIR=src/main/cpp/zlib
@@ -22,7 +24,7 @@ NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
 # {"gcc" or "clang"-- "gcc" must be used with NDK r14b and earlier,
 #  and "clang" must be used with NDK r17c and later}
 TOOLCHAIN="clang"
-ANDROID_VERSION="21"
+ANDROID_VERSION="23"
 
 # armeabi-v7a
 /Users/vshpyrka/Library/Android/sdk/cmake/3.22.1/bin/cmake -G"Unix Makefiles" \
@@ -34,7 +36,7 @@ ANDROID_VERSION="21"
   -DANDROID_ARM_MODE=arm \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_ASM_FLAGS="--target=arm-linux-androideabi${ANDROID_VERSION}" \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
@@ -54,7 +56,7 @@ rm -fr CMakeCache.txt
   -DANDROID_ARM_MODE=arm \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_ASM_FLAGS="--target=aarch64-linux-android${ANDROID_VERSION}" \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
@@ -73,7 +75,7 @@ rm -fr CMakeCache.txt
   -DCMAKE_ANDROID_ARCH_ABI=x86 \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
 #  -DCOMPILE_FLAGS=-mfloat-abi=hard
@@ -92,7 +94,7 @@ rm -fr CMakeCache.txt
   -DCMAKE_ANDROID_ARCH_ABI=x86_64 \
   -DANDROID_PLATFORM=android-${ANDROID_VERSION} \
   -DCMAKE_SYSTEM_NAME=Android \
-  -DCMAKE_SYSTEM_VERSION=21 \
+  -DCMAKE_SYSTEM_VERSION=23 \
   -DANDROID_TOOLCHAIN=${TOOLCHAIN} \
   -DCMAKE_TOOLCHAIN_FILE=${NDK_PATH}/build/cmake/android.toolchain.cmake
 
