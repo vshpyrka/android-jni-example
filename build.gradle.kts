@@ -16,6 +16,7 @@ android {
         externalNativeBuild {
             cmake {
                 cppFlags("")
+                arguments += listOf("-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON")
             }
         }
     }
