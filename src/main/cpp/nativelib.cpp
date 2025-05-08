@@ -7,6 +7,7 @@
 #include <zlib.h>
 #include <jpeglib.h>
 #include <jerror.h>
+#include <unistd.h>
 
 using namespace std;
 using namespace Magick;
@@ -371,4 +372,13 @@ Java_com_example_nativelib_NativeLib_crash(JNIEnv *env, jobject thiz) {
     LOGI("AAA Crashing the process");
     raise(SIGSEGV);
     LOGI("AAA SIGSEGV Sent");
+}
+
+extern "C"
+JNIEXPORT void JNICALL
+Java_com_example_nativelib_NativeLib_printDeviceInfo(JNIEnv *env, jobject thiz) {
+    long numCores = sysconf(_SC_NPROCESSORS_CONF);
+    LOGI("AAA Device Info numberOfCores = %ld", numCores);
+    long clockSpeedHz = sysconf(_SC_CLK_TCK);
+    LOGI("AAA Device Info clockSpeedHz = %ld", clockSpeedHz);
 }

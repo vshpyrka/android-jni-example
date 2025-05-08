@@ -10,6 +10,7 @@ class JniLauncherFragment : Fragment(R.layout.fragment_jni_launcher) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        view.applyWindowInsets()
         val binding = FragmentJniLauncherBinding.bind(view)
         binding.png.setOnClickListener {
             it.findNavController().navigate(R.id.to_LibPngProcessFragment)
@@ -19,6 +20,9 @@ class JniLauncherFragment : Fragment(R.layout.fragment_jni_launcher) {
         }
         binding.blur.setOnClickListener {
             it.findNavController().navigate(R.id.to_imageMagicProcessFragment)
+        }
+        binding.deviceInfo.setOnClickListener {
+            NativeLib().printDeviceInfo()
         }
     }
 }

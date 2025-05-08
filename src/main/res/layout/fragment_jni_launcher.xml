@@ -28,4 +28,11 @@
         android:text="Blur"
         tools:ignore="HardcodedText" />
 
+    <Button
+        android:id="@+id/device_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Device Info"
+        tools:ignore="HardcodedText" />
+
 </LinearLayout>

@@ -16,6 +16,8 @@ class NativeLib {
 
     external fun crash()
 
+    external fun printDeviceInfo()
+
     companion object {
         // Used to load the 'nativelib' library on application startup.
         init {
