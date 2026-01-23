@@ -9,7 +9,6 @@ android {
 
     defaultConfig {
         minSdk = sdk.versions.minSdk.get().toInt()
-        targetSdk = sdk.versions.targetSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -40,9 +39,6 @@ android {
             path("src/main/cpp/CMakeLists.txt")
             version = "3.22.1"
         }
-    }
-    kotlinOptions {
-        jvmTarget = "17"
     }
 
     compileOptions {
