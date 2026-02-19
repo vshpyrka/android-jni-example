@@ -1,12 +1,12 @@
 /*
-  Copyright @ 2003 ImageMagick Studio LLC, a non-profit organization
+  Copyright @ 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
-  
+
   You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
-  
-    https://imagemagick.org/script/license.php
-  
+
+    https://imagemagick.org/license/
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -38,7 +38,6 @@ extern WandExport double
   PixelGetFuzz(const PixelWand *) magick_attribute((__pure__)),
   PixelGetGreen(const PixelWand *) magick_attribute((__pure__)),
   PixelGetMagenta(const PixelWand *) magick_attribute((__pure__)),
-  PixelGetAlpha(const PixelWand *) magick_attribute((__pure__)),
   PixelGetRed(const PixelWand *) magick_attribute((__pure__)),
   PixelGetYellow(const PixelWand *) magick_attribute((__pure__));
 
@@ -70,7 +69,6 @@ extern WandExport Quantum
   PixelGetGreenQuantum(const PixelWand *) magick_attribute((__pure__)),
   PixelGetIndex(const PixelWand *) magick_attribute((__pure__)),
   PixelGetMagentaQuantum(const PixelWand *) magick_attribute((__pure__)),
-  PixelGetAlphaQuantum(const PixelWand *) magick_attribute((__pure__)),
   PixelGetRedQuantum(const PixelWand *) magick_attribute((__pure__)),
   PixelGetYellowQuantum(const PixelWand *) magick_attribute((__pure__));
 
@@ -100,9 +98,6 @@ extern WandExport void
   PixelSetIndex(PixelWand *,const Quantum),
   PixelSetMagenta(PixelWand *,const double),
   PixelSetMagentaQuantum(PixelWand *,const Quantum),
-  PixelSetPixelColor(PixelWand *,const PixelInfo *),
-  PixelSetAlpha(PixelWand *,const double),
-  PixelSetAlphaQuantum(PixelWand *,const Quantum),
   PixelSetPixelColor(PixelWand *,const PixelInfo *),
   PixelSetQuantumPixel(const Image *,const Quantum *,PixelWand *),
   PixelSetRed(PixelWand *,const double),

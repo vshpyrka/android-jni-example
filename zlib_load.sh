@@ -4,7 +4,7 @@ echo removing existing zlib source
 rm -rf ./.tmp
 mkdir .tmp
 
-ZLIB_VERSION=1.2.13
+ZLIB_VERSION=1.3.2
 
 #echo downloading zlib release ${ZLIB_VERSION}
 #curl https://www.zlib.net/zlib-${ZLIB_VERSION}.tar.gz -o ./.tmp/zlib.tar.gz
@@ -20,7 +20,7 @@ rm -fr ${TARGET_DIR}
 cd .tmp/zlib-${ZLIB_VERSION}
 
 # Set these variables to suit your needs
-NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
+NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/28.2.13676358
 # {"gcc" or "clang"-- "gcc" must be used with NDK r14b and earlier,
 #  and "clang" must be used with NDK r17c and later}
 TOOLCHAIN="clang"

@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-LIBJPEG_VERSION=2.1.5.1
+LIBJPEG_VERSION=3.1.3
 
 rm -rf ./.tmp
 mkdir .tmp
@@ -10,7 +10,7 @@ cp archives/libjpeg-turbo-${LIBJPEG_VERSION}.tar.gz ./.tmp/libjpeg-turbo-${LIBJP
 tar -xf .tmp/libjpeg-turbo-${LIBJPEG_VERSION}.tar.gz -C ./.tmp
 
 # Set these variables to suit your needs
-NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
+NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/28.2.13676358
 # {"gcc" or "clang"-- "gcc" must be used with NDK r14b and earlier,
 #  and "clang" must be used with NDK r17c and later}
 TOOLCHAIN="clang"

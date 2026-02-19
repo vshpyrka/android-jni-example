@@ -4,7 +4,11 @@ echo removing existing imagemagick source
 rm -rf ./.tmp
 mkdir .tmp
 
-IMAGEMAGICK_VERSION=7.1.1-11
+IMAGEMAGICK_VERSION=7.1.2-13
+
+#cp archives/ImageMagick-${IMAGEMAGICK_VERSION}.tar.xz ./.tmp/ImageMagick-${IMAGEMAGICK_VERSION}.tar.gz
+#
+#tar -xf .tmp/ImageMagick-${IMAGEMAGICK_VERSION}.tar.gz -C ./.tmp
 
 echo downloading imagemagick release ${IMAGEMAGICK_VERSION}
 curl https://imagemagick.org/archive/releases/ImageMagick-${IMAGEMAGICK_VERSION}.tar.xz -o ./.tmp/ImageMagick.tar.gz
@@ -15,7 +19,7 @@ rm -fr ${TARGET_DIR}
 
 cd .tmp/ImageMagick-${IMAGEMAGICK_VERSION}
 
-export ANDROID_NDK=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
+export ANDROID_NDK=/Users/vshpyrka/Library/Android/sdk/ndk/28.2.13676358
 export PATH=$ANDROID_NDK/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH
 export TOOLCHAIN=$ANDROID_NDK/toolchains/llvm/prebuilt/darwin-x86_64
 export API=23

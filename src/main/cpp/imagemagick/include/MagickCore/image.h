@@ -5,7 +5,7 @@
   You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
 
-    https://imagemagick.org/script/license.php
+    https://imagemagick.org/license/
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -24,26 +24,6 @@ extern "C" {
 
 #define OpaqueAlpha  ((Quantum) QuantumRange)
 #define TransparentAlpha  ((Quantum) 0)
-
-typedef enum
-{
-  UndefinedAlphaChannel,
-  ActivateAlphaChannel,
-  AssociateAlphaChannel,
-  BackgroundAlphaChannel,
-  CopyAlphaChannel,
-  DeactivateAlphaChannel,
-  DiscreteAlphaChannel,
-  DisassociateAlphaChannel,
-  ExtractAlphaChannel,
-  OffAlphaChannel,
-  OnAlphaChannel,
-  OpaqueAlphaChannel,
-  RemoveAlphaChannel,
-  SetAlphaChannel,
-  ShapeAlphaChannel,
-  TransparentAlphaChannel
-} AlphaChannelOption;
 
 typedef enum
 {
@@ -333,7 +313,7 @@ struct _Image
   MagickBooleanType
     debug;             /* debug output attribute */
 
-  volatile ssize_t
+  ssize_t
     reference_count;   /* image data sharing memory management */
 
   SemaphoreInfo
@@ -364,6 +344,9 @@ struct _Image
 
   ChannelType
     channels;
+
+  time_t
+    ttl;
 };
 
 /*

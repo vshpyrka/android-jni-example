@@ -1,12 +1,12 @@
 /*
-  Copyright @ 2003 ImageMagick Studio LLC, a non-profit organization
+  Copyright @ 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
-  
+
   You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
-  
-    https://imagemagick.org/script/license.php
-  
+
+    https://imagemagick.org/license/
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -64,11 +64,11 @@ extern "C" {
 #include <sys/types.h>
 #include <time.h>
 
-#if defined(WIN32) || defined(WIN64)
+#if defined(WIN32) || defined(WIN64) || defined(_WIN32_WINNT)
 #  define MAGICKWAND_WINDOWS_SUPPORT
 #else
 #  define MAGICKWAND_POSIX_SUPPORT
-#endif 
+#endif
 
 typedef struct _MagickWand
   MagickWand;
@@ -79,7 +79,6 @@ typedef struct _MagickWand
 #include "MagickWand/compare.h"
 #include "MagickWand/composite.h"
 #include "MagickWand/conjure.h"
-#include "MagickWand/convert.h"
 #include "MagickWand/deprecate.h"
 #include "MagickWand/display.h"
 #include "MagickWand/drawing-wand.h"

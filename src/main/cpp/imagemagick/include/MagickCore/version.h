@@ -5,7 +5,7 @@
   You may not use this file except in compliance with the License.
   obtain a copy of the License at
   
-    https://imagemagick.org/script/license.php
+    https://imagemagick.org/license/
   
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -27,24 +27,24 @@ extern "C" {
 */
 #define MagickPackageName "ImageMagick"
 #define MagickCopyright  "(C) 1999 ImageMagick Studio LLC"
-#define MagickLibVersion  0x711
-#define MagickLibVersionText  "7.1.1"
-#define MagickLibVersionNumber  10,0,1
-#define MagickLibAddendum  "-11"
+#define MagickLibVersion  0x712
+#define MagickLibVersionText  "7.1.2"
+#define MagickLibVersionNumber  10,0,2
+#define MagickLibAddendum  "-13"
 #define MagickLibInterface  10
 #define MagickLibMinInterface  10
 #define MagickPlatform  "x86_64"
-#define MagickppLibVersionText  "7.1.1"
+#define MagickppLibVersionText  "7.1.2"
 #define MagickppLibVersionNumber  5:0:0
-#define MagickppLibAddendum  "-11"
+#define MagickppLibAddendum  "-13"
 #define MagickppLibInterface  5
 #define MagickppLibMinInterface  5
-#define MagickGitRevision  "21206"
-#define MagickReleaseDate  "2023-05-29"
+#define MagickGitRevision  "23522"
+#define MagickReleaseDate  "2026-01-19"
 #define MagickAuthoritativeLicense  \
-  "https://imagemagick.org/script/license.php"
+  "https://imagemagick.org/license/"
 #define MagickAuthoritativeURL  "https://imagemagick.org"
-#define MagickHomeURL  "file:///Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.1-11/build/share/doc/ImageMagick-7/index.html"
+#define MagickHomeURL  "file:///Users/vshpyrka/Dev/github/android-playground/app/libs/android-jni-example/.tmp/ImageMagick-7.1.2-13/build/share/doc/ImageMagick-7/index.html"
 #if (MAGICKCORE_QUANTUM_DEPTH == 8)
 #define MagickQuantumDepth  "Q8"
 #define MagickQuantumRange  "255"

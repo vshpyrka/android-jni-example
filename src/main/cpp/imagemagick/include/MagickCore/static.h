@@ -1,11 +1,11 @@
 /*
-  Copyright @ 2000 ImageMagick Studio LLC, a non-profit organization
+  Copyright @ 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
 
   You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
 
-    https://imagemagick.org/script/license.php
+    https://imagemagick.org/license/
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -134,6 +134,7 @@ extern ModuleExport size_t
   RegisterSCRImage(void),
   RegisterSCREENSHOTImage(void),
   RegisterSCTImage(void),
+  RegisterSF3Image(void),
   RegisterSFWImage(void),
   RegisterSGIImage(void),
   RegisterSIXELImage(void),
@@ -149,6 +150,7 @@ extern ModuleExport size_t
   RegisterTIM2Image(void),
   RegisterTTFImage(void),
   RegisterTXTImage(void),
+  RegisterUHDRImage(void),
   RegisterUILImage(void),
   RegisterURLImage(void),
   RegisterUYVYImage(void),
@@ -274,6 +276,7 @@ extern ModuleExport void
   UnregisterSCRImage(void),
   UnregisterSCREENSHOTImage(void),
   UnregisterSCTImage(void),
+  UnregisterSF3Image(void),
   UnregisterSFWImage(void),
   UnregisterSGIImage(void),
   UnregisterSIXELImage(void),
@@ -289,6 +292,7 @@ extern ModuleExport void
   UnregisterTIM2Image(void),
   UnregisterTTFImage(void),
   UnregisterTXTImage(void),
+  UnregisterUHDRImage(void),
   UnregisterUILImage(void),
   UnregisterURLImage(void),
   UnregisterUYVYImage(void),

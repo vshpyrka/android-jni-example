@@ -5,7 +5,7 @@
   You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
 
-    https://imagemagick.org/script/license.php
+    https://imagemagick.org/license/
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -22,22 +22,12 @@
 extern "C" {
 #endif
 
-#if defined(__BORLANDC__) && defined(_DLL)
-#  define _MAGICKDLL_
-#  define _MAGICKLIB_
-#  define MAGICKCORE_MODULES_SUPPORT
-#  undef MAGICKCORE_BUILD_MODULES
-#endif
-
 #if defined(MAGICKWAND_WINDOWS_SUPPORT) && !defined(__CYGWIN__)
 #  define WandPrivate
 #  if defined(_MT) && defined(_DLL) && !defined(_MAGICKDLL_) && !defined(_LIB)
 #    define _MAGICKDLL_
 #  endif
 #  if defined(_MAGICKDLL_)
-#    if defined(_VISUALC_)
-#      pragma warning( disable: 4273 )  /* Disable the dll linkage warnings */
-#    endif
 #    if !defined(_MAGICKLIB_)
 #      if defined(__clang__) || defined(__GNUC__)
 #        define WandExport __attribute__ ((dllimport))
@@ -95,7 +85,7 @@ extern "C" {
 #  define wand_unreferenced(x)  /* nothing */
 #endif
 
-#if !defined(__clang__) && (((__GNUC__) > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 3)))
+#if !defined(__clang__) && (defined(__GNUC__) && (__GNUC__) > 4)
 #  define wand_alloc_size(x)  __attribute__((__alloc_size__(x)))
 #  define wand_alloc_sizes(x,y)  __attribute__((__alloc_size__(x,y)))
 #else
@@ -103,7 +93,7 @@ extern "C" {
 #  define wand_alloc_sizes(x,y)  /* nothing */
 #endif
 
-#if defined(__clang__) || (((__GNUC__) > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 3)))
+#if defined(__clang__) || (defined(__GNUC__) && (__GNUC__) > 4)
 #  define wand_cold_spot  __attribute__((__cold__))
 #  define wand_hot_spot  __attribute__((__hot__))
 #else

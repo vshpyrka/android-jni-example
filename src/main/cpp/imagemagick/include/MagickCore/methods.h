@@ -1,12 +1,12 @@
 /*
   Copyright @ 1999 ImageMagick Studio LLC, a non-profit organization
   dedicated to making software imaging solutions freely available.
-  
+
   You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
-  
-    https://imagemagick.org/script/license.php
-  
+
+    https://imagemagick.org/license/
+
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -976,6 +976,7 @@ extern "C" {
 #define RegisterSCREENSHOTImage  PrependMagickMethod(RegisterSCREENSHOTImage)
 #define RegisterSCRImage  PrependMagickMethod(RegisterSCRImage)
 #define RegisterSCTImage  PrependMagickMethod(RegisterSCTImage)
+#define RegisterSF3Image  PrependMagickMethod(RegisterSF3Image)
 #define RegisterSFWImage  PrependMagickMethod(RegisterSFWImage)
 #define RegisterSGIImage  PrependMagickMethod(RegisterSGIImage)
 #define RegisterSIXELImage  PrependMagickMethod(RegisterSIXELImage)
@@ -1360,6 +1361,7 @@ extern "C" {
 #define UnregisterSCREENSHOTImage  PrependMagickMethod(UnregisterSCREENSHOTImage)
 #define UnregisterSCRImage  PrependMagickMethod(UnregisterSCRImage)
 #define UnregisterSCTImage  PrependMagickMethod(UnregisterSCTImage)
+#define UnregisterSF3Image  PrependMagickMethod(UnregisterSF3Image)
 #define UnregisterSFWImage  PrependMagickMethod(UnregisterSFWImage)
 #define UnregisterSGIImage  PrependMagickMethod(UnregisterSGIImage)
 #define UnregisterSIXELImage  PrependMagickMethod(UnregisterSIXELImage)

@@ -1,6 +1,6 @@
 #!/bin/zsh
 
-LIBPNG_VERSION=1.6.39
+LIBPNG_VERSION=1.6.55
 
 rm -rf ./.tmp
 mkdir .tmp
@@ -10,7 +10,7 @@ cp archives/libpng-${LIBPNG_VERSION}.tar.xz ./.tmp/libpng-${LIBPNG_VERSION}.tar.
 tar -xf .tmp/libpng-${LIBPNG_VERSION}.tar.xz -C ./.tmp
 
 # Set these variables to suit your needs
-NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
+NDK_PATH=/Users/vshpyrka/Library/Android/sdk/ndk/28.2.13676358
 # {"gcc" or "clang"-- "gcc" must be used with NDK r14b and earlier,
 #  and "clang" must be used with NDK r17c and later}
 TOOLCHAIN="clang"

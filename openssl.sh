@@ -3,7 +3,7 @@
 rm -rf ./.tmp
 mkdir .tmp
 
-OPENSSL_VERSION=3.1.1
+OPENSSL_VERSION=3.6.1
 
 cp archives/openssl-${OPENSSL_VERSION}.tar.gz ./.tmp/openssl-${OPENSSL_VERSION}.tar.gz
 tar -xf .tmp/openssl-${OPENSSL_VERSION}.tar.gz -C ./.tmp
@@ -13,7 +13,7 @@ rm -fr ${TARGET_DIR}
 
 cd .tmp/openssl-${OPENSSL_VERSION}
 
-export ANDROID_NDK_ROOT=/Users/vshpyrka/Library/Android/sdk/ndk/25.2.9519653
+export ANDROID_NDK_ROOT=/Users/vshpyrka/Library/Android/sdk/ndk/28.2.13676358
 PATH=$ANDROID_NDK_ROOT/toolchains/llvm/prebuilt/darwin-x86_64/bin:$PATH
 
 for architecture in android-arm android-arm64 android-x86 android-x86_64

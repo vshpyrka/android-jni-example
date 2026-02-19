@@ -5,7 +5,7 @@
   You may not use this file except in compliance with the License.  You may
   obtain a copy of the License at
 
-    https://imagemagick.org/script/license.php
+    https://imagemagick.org/license/
 
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
@@ -81,59 +81,16 @@ extern "C" {
 # endif
 #endif
 
-
-#if !defined(MAGICKCORE_HDRI_ENABLE) && defined(MAGICKCORE_HDRI_ENABLE_OBSOLETE_IN_H)
-# warning "you should set MAGICKCORE_HDRI_ENABLE to sensible default set it to configure time default"
-# warning "this is an obsolete behavior please fix yours makefile"
-# define MAGICKCORE_HDRI_ENABLE MAGICKCORE_HDRI_ENABLE_OBSOLETE_IN_H
-#endif
-
 /* whether HDRI is enable */
 #if !defined(MAGICKCORE_HDRI_ENABLE)
-# error "you should set MAGICKCORE_HDRI_ENABLE"
+# warning "you should set MAGICKCORE_HDRI_ENABLE"
 #endif
 
 #if MAGICKCORE_HDRI_ENABLE
 # define MAGICKCORE_HDRI_SUPPORT 1
 #endif
-
-/* Compatibility block */
-#if !defined(MAGICKCORE_QUANTUM_DEPTH) && defined(MAGICKCORE_QUANTUM_DEPTH_OBSOLETE_IN_H)
-# warning "you should set MAGICKCORE_QUANTUM_DEPTH to sensible default set it to configure time default"
-# warning "this is an obsolete behavior please fix yours makefile"
-# define MAGICKCORE_QUANTUM_DEPTH MAGICKCORE_QUANTUM_DEPTH_OBSOLETE_IN_H
-#endif
-
-/* Number of bits in a pixel Quantum (8/16/32/64) */
-#ifndef MAGICKCORE_QUANTUM_DEPTH
-# error "you should set MAGICKCORE_QUANTUM_DEPTH"
-#endif
-
-/* check values */
-#if MAGICKCORE_QUANTUM_DEPTH != 8
-# if MAGICKCORE_QUANTUM_DEPTH != 16
-#  if MAGICKCORE_QUANTUM_DEPTH != 32
-#   if MAGICKCORE_QUANTUM_DEPTH != 64
-#    error "MAGICKCORE_QUANTUM_DEPTH is not 8/16/32/64 bits"
-#   endif
-#  endif
-# endif
-#endif
-
-
-#if !defined(MAGICKCORE_HDRI_ENABLE) && defined(MAGICKCORE_HDRI_ENABLE_OBSOLETE_IN_H)
-# warning "you should set MAGICKCORE_HDRI_ENABLE to sensible default set it to configure time default"
-# warning "this is an obsolete behavior please fix yours makefile"
-# define MAGICKCORE_HDRI_ENABLE MAGICKCORE_HDRI_ENABLE_OBSOLETE_IN_H
-#endif
-
-/* whether HDRI is enable */
-#if !defined(MAGICKCORE_HDRI_ENABLE)
-# error "you should set MAGICKCORE_HDRI_ENABLE"
-#endif
-
-#if MAGICKCORE_HDRI_ENABLE
-# define MAGICKCORE_HDRI_SUPPORT 1
+#if MAGICKCORE_CHANNEL_MASK_DEPTH == 64
+# define MAGICKCORE_64BIT_CHANNEL_MASK_SUPPORT 1
 #endif
 
 #if defined __CYGWIN32__ && !defined __CYGWIN__
@@ -146,9 +103,9 @@ extern "C" {
 /*  ABI SUFFIX */
 #ifndef MAGICKCORE_HDRI_SUPPORT
 #define MAGICKCORE_ABI_SUFFIX  "Q" MAGICKCORE_STRING_XQUOTE(MAGICKCORE_QUANTUM_DEPTH)
-#else 
+#else
 #define MAGICKCORE_ABI_SUFFIX "Q" MAGICKCORE_STRING_XQUOTE(MAGICKCORE_QUANTUM_DEPTH) "HDRI"
-#endif 
+#endif
 
 /* some path game */
 #if !defined __CYGWIN__
@@ -161,7 +118,7 @@ extern "C" {
 #  define MAGICKCORE_PATH_SEPARATOR		";"
 # endif
 #endif
- 
+
 /* posix */
 #ifndef MAGICKCORE_DIR_SEPARATOR_CHAR
    /* Assume that not having this is an indicator that all
@@ -173,20 +130,20 @@ extern "C" {
 #endif /* !DIR_SEPARATOR_CHAR */
 
 # if defined(MAGICKCORE_POSIX_SUPPORT) || defined(__MINGW32__)
- 
+
 /* module dir */
 #ifndef MAGICKCORE_MODULES_DIRNAME
 # define MAGICKCORE_MODULES_DIRNAME MAGICKCORE_MODULES_BASEDIRNAME "-" MAGICKCORE_ABI_SUFFIX
 #endif
- 
+
 #ifndef MAGICKCORE_MODULES_PATH
-#  define MAGICKCORE_MODULES_PATH MAGICKCORE_LIBRARY_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_MODULES_DIRNAME
+#  define MAGICKCORE_MODULES_PATH MAGICKCORE_LIBRARY_ABSOLUTE_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_MODULES_DIRNAME
 #endif
- 
+
 #ifndef MAGICKCORE_MODULES_RELATIVE_PATH
 #define MAGICKCORE_MODULES_RELATIVE_PATH MAGICKCORE_LIBRARY_RELATIVE_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_MODULES_DIRNAME
 #endif
- 
+
 /* Subdirectory under lib to place ImageMagick coder module files */
 #ifndef MAGICKCORE_CODER_PATH
 # if defined(vms)
@@ -195,11 +152,11 @@ extern "C" {
 #  define MAGICKCORE_CODER_PATH MAGICKCORE_MODULES_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_CODER_DIRNAME
 # endif
 #endif
- 
+
 #ifndef MAGICKCORE_CODER_RELATIVE_PATH
 # define MAGICKCORE_CODER_RELATIVE_PATH MAGICKCORE_MODULES_RELATIVE_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_CODER_DIRNAME
 #endif
- 
+
 /* subdirectory under lib to place ImageMagick filter module files */
 #ifndef MAGICKCORE_FILTER_PATH
 # if defined(vms)
@@ -208,7 +165,7 @@ extern "C" {
 #  define MAGICKCORE_FILTER_PATH MAGICKCORE_MODULES_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_FILTER_DIRNAME
 # endif
 #endif
- 
+
 #ifndef MAGICKCORE_FILTER_RELATIVE_PATH
 # define MAGICKCORE_FILTER_RELATIVE_PATH MAGICKCORE_MODULES_RELATIVE_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_FILTER_DIRNAME
 #endif
@@ -217,11 +174,11 @@ extern "C" {
 #ifndef MAGICKCORE_SHAREARCH_DIRNAME
 # define MAGICKCORE_SHAREARCH_DIRNAME MAGICKCORE_SHAREARCH_BASEDIRNAME "-" MAGICKCORE_ABI_SUFFIX
 #endif
- 
+
 #ifndef MAGICKCORE_SHAREARCH_PATH
-#  define MAGICKCORE_SHAREARCH_PATH MAGICKCORE_LIBRARY_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_SHAREARCH_DIRNAME MAGICKCORE_DIR_SEPARATOR
+#  define MAGICKCORE_SHAREARCH_PATH MAGICKCORE_LIBRARY_ABSOLUTE_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_SHAREARCH_DIRNAME MAGICKCORE_DIR_SEPARATOR
 #endif
- 
+
 #ifndef MAGICKCORE_SHAREARCH_RELATIVE_PATH
 #define MAGICKCORE_SHAREARCH_RELATIVE_PATH MAGICKCORE_LIBRARY_RELATIVE_PATH MAGICKCORE_DIR_SEPARATOR MAGICKCORE_SHAREARCH_DIRNAME
 #endif
@@ -263,9 +220,9 @@ extern "C" {
 
 #define MAGICKCORE_ALIGN_UP(n, power_of_2) \
   MAGICKCORE_ALIGN_DOWN((n) + MAGICKCORE_MAX_ALIGNMENT_PADDING(power_of_2),power_of_2)
- 
+
 #if defined(__cplusplus) || defined(c_plusplus)
 }
 #endif
- 
+
 #endif

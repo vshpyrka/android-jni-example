@@ -4,7 +4,7 @@ echo removing existing imagemagick source
 rm -rf ./.tmp
 mkdir .tmp
 
-IMAGEMAGICK_VERSION=7.1.1-11
+IMAGEMAGICK_VERSION=7.1.2-13
 
 echo downloading imagemagick release ${IMAGEMAGICK_VERSION}
 curl https://imagemagick.org/archive/releases/ImageMagick-${IMAGEMAGICK_VERSION}.tar.xz -o ./.tmp/ImageMagick.tar.gz

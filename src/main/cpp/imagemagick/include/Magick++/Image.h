@@ -1083,6 +1083,7 @@ namespace Magick
 
     // Remap image colors with closest color from reference image
     void map(const Image &mapImage_,const bool dither_=false);
+    void map(const Image &mapImage_,const DitherMethod ditherMethod_);
 
     // Delineate arbitrarily shaped clusters in the image.
     void meanShift(const size_t width_,const size_t height_,
@@ -1271,7 +1272,7 @@ namespace Magick
     // Roll image (rolls image vertically and horizontally) by specified
     // number of columns and rows)
     void roll(const Geometry &roll_);
-    void roll(const size_t columns_,const size_t rows_);
+    void roll(const ssize_t columns_,const ssize_t rows_);
 
     // Rotate image clockwise by specified number of degrees. Specify a
     // negative number for degrees to rotate counter-clockwise.
@@ -1345,7 +1346,7 @@ namespace Magick
 
     // adjust the image contrast with a non-linear sigmoidal contrast algorithm
     void sigmoidalContrast(const bool sharpen_,const double contrast,
-      const double midpoint=QuantumRange/2.0);
+      const double midpoint=(double) QuantumRange/2.0);
 
     // Image signature. Set force_ to true in order to re-calculate
     // the signature regardless of whether the image data has been
